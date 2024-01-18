@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E9055C3-66F9-4E39-B860-5EE0F2264441}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MainProgram</RootNamespace>
+    <AssemblyName>MainProgram</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ammonia.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="DeviceManager.cs" />
+    <Compile Include="AlarmsGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlarmsGui.Designer.cs">
+      <DependentUpon>AlarmsGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsGui.Designer.cs">
+      <DependentUpon>SettingsGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TankGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TankGui.Designer.cs">
+      <DependentUpon>TankGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="Hardness.cs" />
+    <Compile Include="Heater.cs" />
+    <Compile Include="Nitrate.cs" />
+    <Compile Include="Nitrite.cs" />
+    <Compile Include="PhBalance.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pump.cs" />
+    <Compile Include="Salinity.cs" />
+    <Compile Include="Stubs.cs" />
+    <EmbeddedResource Include="AlarmsGui.resx">
+      <DependentUpon>AlarmsGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsGui.resx">
+      <DependentUpon>SettingsGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TankGui.resx">
+      <DependentUpon>TankGui.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DeviceMessages.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\tank concept3.JPG" />
+    <None Include="Resources\Salinity.JPG" />
+    <None Include="Resources\pump.JPG" />
+    <None Include="Resources\Ph.JPG" />
+    <None Include="Resources\Nitrite.JPG" />
+    <None Include="Resources\Nitrate.JPG" />
+    <None Include="Resources\Heater.JPG" />
+    <None Include="Resources\hardness.JPG" />
+    <None Include="Resources\Ammonia.JPG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
